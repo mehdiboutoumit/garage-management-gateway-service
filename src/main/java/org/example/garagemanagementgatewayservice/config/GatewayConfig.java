@@ -8,19 +8,19 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class GatewayConfig {
-    @Value("${client-service-url:http://localhost:8081}")
+    @Value("${client-service-url}")
     private String clientServiceUrl;
 
-    @Value("${vehicule-service-url:http://localhost:8082}")
+    @Value("${vehicule-service-url}")
     private String vehiculeServiceUrl;
 
-    @Value("${workshop-service-url:http://localhost:8083}")
+    @Value("${workshop-service-url}")
     private String workshopServiceUrl;
 
-    @Value("${invoice-service-url:http://localhost:8084}")
+    @Value("${invoice-service-url}")
     private String invoiceServiceUrl;
 
-    @Value("${notification-service-url:http://localhost:8085}")
+    @Value("${notification-service-url}")
     private String notificationServiceUrl;
 
 
