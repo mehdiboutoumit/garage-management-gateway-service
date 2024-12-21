@@ -31,20 +31,6 @@ public class GatewayConfig {
     private String notificationServiceUrl;
 
 
-    @Value("${client-service-url:http://localhost:8081}")
-    private String clientServiceUrl;
-
-    @Value("${vehicule-service-url:http://localhost:8082}")
-    private String vehiculeServiceUrl;
-
-    @Value("${workshop-service-url:http://localhost:8083}")
-    private String workshopServiceUrl;
-
-    @Value("${invoice-service-url:http://localhost:8084}")
-    private String invoiceServiceUrl;
-
-    @Value("${notification-service-url:http://localhost:8085}")
-    private String notificationServiceUrl;
 
     @Bean
     public RouteLocator customRoutes(RouteLocatorBuilder builder) {
