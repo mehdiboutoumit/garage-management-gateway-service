@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +15,21 @@ import org.springframework.context.annotation.Configuration;
 @Setter
 @RefreshScope
 public class GatewayConfig {
+    @Value("${client-service-url}")
+    private String clientServiceUrl;
+
+    @Value("${vehicule-service-url}")
+    private String vehiculeServiceUrl;
+
+    @Value("${workshop-service-url}")
+    private String workshopServiceUrl;
+
+    @Value("${invoice-service-url}")
+    private String invoiceServiceUrl;
+
+    @Value("${notification-service-url}")
+    private String notificationServiceUrl;
+
 
     @Value("${client-service-url:http://localhost:8081}")
     private String clientServiceUrl;

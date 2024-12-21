@@ -11,6 +11,19 @@ invoice-service-url: ${INVOICE_SERVICE_URL:http://localhost:8084}
 notification-service-url: ${NOTIFICATION_SERVICE_URL:http://localhost:8085}
 
 
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000}
+  allowed-methods: ${CORS_ALLOWED_METHODS:GET,POST,PUT,DELETE,OPTIONS}
+  allowed-headers: ${CORS_ALLOWED_HEADERS:*}
+  allow-credentials: ${CORS_ALLOW_CREDENTIALS:true}
+
+client-service-url: ${CLIENT_SERVICE_URL:http://localhost:8081}
+vehicule-service-url: ${VEHICULE_SERVICE_URL:http://localhost:8082}
+workshop-service-url: ${WORKSHOP_SERVICE_URL:http://localhost:8083}
+invoice-service-url: ${INVOICE_SERVICE_URL:http://localhost:8084}
+notification-service-url: ${NOTIFICATION_SERVICE_URL:http://localhost:8085}
+
+
 spring:
   application:
     name: garage-management-gateway-service
