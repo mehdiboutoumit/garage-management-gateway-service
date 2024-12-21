@@ -1,0 +1,22 @@
+management:
+  endpoint:
+    health:
+      show-details: always
+    refresh:
+      enabled: true
+    info:
+      enabled: true
+    restart:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: 'refresh,health,info'
+server:
+  port: 8080
+
+resilience4j:
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 45s

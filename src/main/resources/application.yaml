@@ -1,51 +1,22 @@
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000}
+  allowed-methods: ${CORS_ALLOWED_METHODS:GET,POST,PUT,DELETE,OPTIONS}
+  allowed-headers: ${CORS_ALLOWED_HEADERS:*}
+  allow-credentials: ${CORS_ALLOW_CREDENTIALS:true}
+
+client-service-url: ${CLIENT_SERVICE_URL:http://localhost:8081}
+vehicule-service-url: ${VEHICULE_SERVICE_URL:http://localhost:8082}
+workshop-service-url: ${WORKSHOP_SERVICE_URL:http://localhost:8083}
+invoice-service-url: ${INVOICE_SERVICE_URL:http://localhost:8084}
+notification-service-url: ${NOTIFICATION_SERVICE_URL:http://localhost:8085}
+
+
 spring:
   application:
     name: garage-management-gateway-service
-  cloud:
-    gateway:
-      routes:
-        - id: workshop-route
-          uri: http://localhost:8083
-          predicates:
-            - Path=/api/v1/workshop/
-          filters:
-            - AddResponseHeader=X-Powered-By, BTBG Gateway Service
-        - id: notifications-route
-          uri: ${NOTIFICATION_ROUTE_URI:http://localhost:8085}
-          predicates:
-            - Path=/api/v1/notification/**
-          filters:
-            - AddResponseHeader=X-Powered-By, BTBG Gateway Service
-        - id: client-route
-          uri: ${CLIENT_ROUTE_URI:http://localhost:8081}
-          predicates:
-            - Path=/api/v1/client/**
-          filters:
-            - AddResponseHeader=X-Powered-By, BTBG Gateway Service
-        - id: vehicule-route
-          uri: ${VEHICULE_ROUTE_URI:http://localhost:8082}
-          predicates:
-            - Path=/api/v1/vehicule/**
-          filters:
-            - AddResponseHeader=X-Powered-By, BTBG Gateway Service
-        - id: invoice-route
-          uri: ${INVOICE_ROUTE_URI:http://localhost:8084}
-          predicates:
-            - Path=/api/v1/invoice/**
-          filters:
-            - AddResponseHeader=X-Powered-By, BTBG Gateway Service
-      globalcors:
-        corsconfigurations:
-          '[/**]':
-            allowedOrigins:
-              - "*"
-            allowedHeaders:
-              - "*"
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-              - OPTIONS
+
+
 server:
   port: 8080
+
+
